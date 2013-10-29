@@ -3,6 +3,8 @@ DialogueLib
 
 A library for video game dialogue
 
+Intro: http://prezi.com/gkpklevvx36o/dialoguelib/
+
 Inspired by Elan Ruskin's talk at GDC 2012: "Rule Databases for Contextual Dialog and Game Logic."
 
 Talk: http://www.gdcvault.com/play/1015528/AI-driven-Dynamic-Dialog-through
