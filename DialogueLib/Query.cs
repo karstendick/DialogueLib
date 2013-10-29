@@ -61,10 +61,7 @@ namespace DialogueLib
                     }
                 }
                 if (match)
-                {
-                    rule.Match();
                     acceptDict.Add(rule, rule.Criteria.Count);
-                }
             }
             if (acceptDict.Count == 0)
                 return new Response("NullResponse", "NO RESPONSE");
@@ -74,7 +71,9 @@ namespace DialogueLib
             List<Rule> acceptList = acceptDict.Where(kvp => kvp.Value == maxScore).Select(kvp => kvp.Key).ToList();
 
             // Of all the matched rules of maximum criteria, return a random one
-            Response response = acceptList.RandomItem().Response;
+            Rule matchedRule = acceptList.RandomItem();
+            matchedRule.Match();
+            Response response = matchedRule.Response;
             response.Match();
             return response;
         }
